@@ -1,0 +1,113 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin-top: 60px;
+    border: 0;
+    background-color: #2a0d43;
+    scroll-behavior:smooth;
+    color: white;
+}
+
+.cabecalho {
+    height: 60px;
+    width: 100%;
+    background-color: #110c19;
+    border: 1px solid #211c26;
+    
+    position:fixed; 
+    top:0; 
+    left:0; 
+    right:0; 
+    z-index:100;
+    opacity: 98%;
+}
+
+.botoes {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 150px;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+button{
+    background: transparent;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover{
+    text-decoration: underline; /* Sublinha o texto */
+    color: #8d1df0;
+}
+
+.sobreMimPag{
+  position: relative;
+  width: 100%;
+  min-height: calc(100vh - 60px);
+  background: radial-gradient(circle at 10% 20%, #200b3b 0%, #0e051c 100%);
+  padding: 80px 1px 40px 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+}
+
+.infosCompleto{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex: 1;
+}
+h1 {
+    font-size: 2.4rem;
+    font-weight: 400;
+    margin-bottom: 24px;
+}
+
+p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #d1c9db;
+}
+
+.avatar {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    overflow: hidden; /* Corta a imagem no formato circular */
+    background-color: #d9d9d9;
+    flex-shrink: 0;
+    margin-right: 40px;
+}
+
+.avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ajusta a foto sem distorcer as proporções */
+}
+
+.quoteContainer {
+  text-align: right;
+  margin-right: 40px;
+  padding-bottom: 10px;
+}
+
+.quote {
+  font-size: 1rem;
+  font-style: italic;
+  color: #d1c9db;
+}
+
+.author {
+  display: block;
+  font-size: 0.95rem;
+  margin-top: 4px;
+  color: #b5adc0;
+}
