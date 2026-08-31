@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
@@ -11,15 +11,163 @@
 
 <body>
     <div class="stars-container" id="starsContainer"> </div>
-    
+
+    <div class="introOverlay" id="introOverlay">
+        <div class="introTexto">
+            <h1 data-i18n="introTitulo">Bem-vindo(a) ao meu portfólio</h1>
+            <p class="introSubtitulo" data-i18n="introSubtitulo">Escolha a constelação que mais combina com você:</p>
+        </div>
+
+        <div class="constelacoes">
+            <!-- Aquário -->
+            
+            <button class="constelacaoBtn" data-perfil="recrutador" type="button" data-i18n-aria="perfilRecrutadorAria"
+                aria-label="Ver portfólio como Recrutador(a)">
+                <svg class="constelacaoSvg" viewBox="0 0 220 200">
+                    <line class="linhaC" x1="140" y1="35" x2="105" y2="60" />
+                    <line class="linhaC" x1="105" y1="60" x2="60" y2="90" />
+                    <line class="linhaC" x1="60" y1="90" x2="90" y2="105" />
+                    <line class="linhaC" x1="90" y1="105" x2="110" y2="110" />
+                    <line class="linhaC" x1="110" y1="110" x2="140" y2="105" />
+                    <line class="linhaC" x1="60" y1="90" x2="55" y2="110" />
+                    <line class="linhaC" x1="55" y1="110" x2="45" y2="115" />
+                    <line class="linhaC" x1="45" y1="115" x2="45" y2="135" />
+                    <line class="linhaC" x1="45" y1="135" x2="55" y2="155" />
+                    <line class="linhaC" x1="55" y1="155" x2="70" y2="175" />
+                    <line class="linhaC" x1="70" y1="175" x2="85" y2="155" />
+                    <line class="linhaC" x1="85" y1="155" x2="115" y2="155" />
+                    <line class="linhaC" x1="115" y1="155" x2="125" y2="165" />
+                    <line class="linhaC" x1="125" y1="165" x2="145" y2="175" />
+                    <circle class="estrelaC" cx="140" cy="35" r="3.4" />
+                    <circle class="estrelaC" cx="105" cy="60" r="3.4" />
+                    <circle class="estrelaC" cx="60" cy="90" r="3.4" />
+                    <circle class="estrelaC" cx="90" cy="105" r="3.4" />
+                    <circle class="estrelaC" cx="110" cy="110" r="3.4" />
+                    <circle class="estrelaC" cx="140" cy="105" r="3.4" />
+                    <circle class="estrelaC" cx="55" cy="110" r="3.4" />
+                    <circle class="estrelaC" cx="45" cy="115" r="3.4" />
+                    <circle class="estrelaC" cx="45" cy="135" r="3.4" />
+                    <circle class="estrelaC" cx="55" cy="155" r="3.4" />
+                    <circle class="estrelaC" cx="70" cy="175" r="3.4" />
+                    <circle class="estrelaC" cx="85" cy="155" r="3.4" />
+                    <circle class="estrelaC" cx="115" cy="155" r="3.4" />
+                    <circle class="estrelaC" cx="125" cy="165" r="3.4" />
+                    <circle class="estrelaC" cx="145" cy="175" r="3.4" />
+                </svg>
+                <span class="constelacaoLabel" data-i18n="perfilRecrutadorNome">Recrutador(a)</span>
+                <span class="constelacaoLegenda" data-i18n="perfilRecrutadorLegenda">Experiências, projetos e
+                    certificados em destaque</span>
+            </button>
+
+            <!-- Gêmeos -->
+            <button class="constelacaoBtn" data-perfil="desenvolvedor" type="button"
+                data-i18n-aria="perfilDesenvolvedorAria" aria-label="Ver portfólio como Desenvolvedor(a)">
+                <svg class="constelacaoSvg" viewBox="0 0 220 200">
+                    <line class="linhaC" x1="70" y1="18" x2="115" y2="25" />
+                    <line class="linhaC" x1="85" y1="45" x2="105" y2="60" />
+                    <line class="linhaC" x1="105" y1="60" x2="120" y2="65" />
+                    <line class="linhaC" x1="105" y1="60" x2="95" y2="90" />
+                    <line class="linhaC" x1="95" y1="90" x2="80" y2="115" />
+                    <line class="linhaC" x1="80" y1="115" x2="70" y2="140" />
+                    <line class="linhaC" x1="70" y1="140" x2="90" y2="175" />
+                    <line class="linhaC" x1="95" y1="90" x2="110" y2="120" />
+                    <line class="linhaC" x1="110" y1="120" x2="115" y2="155" />
+                    <line class="linhaC" x1="115" y1="155" x2="125" y2="170" />
+                    <line class="linhaC" x1="120" y1="65" x2="145" y2="65" />
+                    <line class="linhaC" x1="145" y1="65" x2="130" y2="35" />
+                    <line class="linhaC" x1="145" y1="65" x2="175" y2="65" />
+                    <line class="linhaC" x1="145" y1="65" x2="150" y2="110" />
+                    <line class="linhaC" x1="150" y1="110" x2="145" y2="160" />
+                    <line class="linhaC" x1="145" y1="160" x2="165" y2="155" />
+                    <line class="linhaC" x1="165" y1="155" x2="185" y2="160" />
+                    <line class="linhaC" x1="185" y1="160" x2="205" y2="160" />
+                    <circle class="estrelaC" cx="85" cy="45" r="3.4" />
+                    <circle class="estrelaC" cx="105" cy="60" r="3.4" />
+                    <circle class="estrelaC" cx="120" cy="65" r="3.4" />
+                    <circle class="estrelaC" cx="95" cy="90" r="3.4" />
+                    <circle class="estrelaC" cx="80" cy="115" r="3.4" />
+                    <circle class="estrelaC" cx="70" cy="140" r="3.4" />
+                    <circle class="estrelaC" cx="90" cy="175" r="3.4" />
+                    <circle class="estrelaC" cx="110" cy="120" r="3.4" />
+                    <circle class="estrelaC" cx="115" cy="155" r="3.4" />
+                    <circle class="estrelaC" cx="125" cy="170" r="3.4" />
+                    <circle class="estrelaC" cx="145" cy="65" r="3.4" />
+                    <circle class="estrelaC" cx="130" cy="35" r="3.4" />
+                    <circle class="estrelaC" cx="175" cy="65" r="3.4" />
+                    <circle class="estrelaC" cx="150" cy="110" r="3.4" />
+                    <circle class="estrelaC" cx="145" cy="160" r="3.4" />
+                    <circle class="estrelaC" cx="165" cy="155" r="3.4" />
+                    <circle class="estrelaC" cx="185" cy="160" r="3.4" />
+                    <circle class="estrelaC" cx="205" cy="160" r="3.4" />
+                </svg>
+                <span class="constelacaoLabel" data-i18n="perfilDesenvolvedorNome">Desenvolvedor(a)</span>
+                <span class="constelacaoLegenda" data-i18n="perfilDesenvolvedorLegenda">Projetos e habilidades técnicas
+                    em primeiro lugar</span>
+            </button>
+
+            <!-- Peixes -->
+            <button class="constelacaoBtn" data-perfil="academico" type="button" data-i18n-aria="perfilAcademicoAria"
+                aria-label="Ver portfólio como Acadêmico(a)">
+                <svg class="constelacaoSvg" viewBox="0 0 220 200">
+                    <line class="linhaC" x1="85" y1="30" x2="75" y2="45" />
+                    <line class="linhaC" x1="75" y1="45" x2="80" y2="60" />
+                    <line class="linhaC" x1="80" y1="60" x2="85" y2="30" />
+                    <line class="linhaC" x1="80" y1="60" x2="60" y2="110" />
+                    <line class="linhaC" x1="60" y1="110" x2="45" y2="135" />
+                    <line class="linhaC" x1="45" y1="135" x2="25" y2="170" />
+                    <line class="linhaC" x1="25" y1="170" x2="50" y2="155" />
+                    <line class="linhaC" x1="50" y1="155" x2="65" y2="155" />
+                    <line class="linhaC" x1="65" y1="155" x2="95" y2="145" />
+                    <line class="linhaC" x1="95" y1="145" x2="110" y2="150" />
+                    <line class="linhaC" x1="110" y1="150" x2="165" y2="155" />
+                    <line class="linhaC" x1="165" y1="155" x2="190" y2="165" />
+                    <line class="linhaC" x1="190" y1="165" x2="210" y2="170" />
+                    <line class="linhaC" x1="210" y1="170" x2="195" y2="180" />
+                    <line class="linhaC" x1="195" y1="180" x2="185" y2="185" />
+                    <line class="linhaC" x1="185" y1="185" x2="185" y2="175" />
+                    <line class="linhaC" x1="185" y1="175" x2="190" y2="165" />
+                    <circle class="estrelaC" cx="85" cy="30" r="3.4" />
+                    <circle class="estrelaC" cx="75" cy="45" r="3.4" />
+                    <circle class="estrelaC" cx="80" cy="60" r="3.4" />
+                    <circle class="estrelaC" cx="60" cy="110" r="3.4" />
+                    <circle class="estrelaC" cx="45" cy="135" r="3.4" />
+                    <circle class="estrelaC" cx="25" cy="170" r="3.4" />
+                    <circle class="estrelaC" cx="50" cy="155" r="3.4" />
+                    <circle class="estrelaC" cx="65" cy="155" r="3.4" />
+                    <circle class="estrelaC" cx="95" cy="145" r="3.4" />
+                    <circle class="estrelaC" cx="110" cy="150" r="3.4" />
+                    <circle class="estrelaC" cx="165" cy="155" r="3.4" />
+                    <circle class="estrelaC" cx="190" cy="165" r="3.4" />
+                    <circle class="estrelaC" cx="210" cy="170" r="3.4" />
+                    <circle class="estrelaC" cx="195" cy="180" r="3.4" />
+                    <circle class="estrelaC" cx="185" cy="185" r="3.4" />
+                    <circle class="estrelaC" cx="185" cy="175" r="3.4" />
+                    <span class="constelacaoLabel" data-i18n="perfilAcademicoNome">Acadêmico(a)</span>
+                    <span class="constelacaoLegenda" data-i18n="perfilAcademicoLegenda">Formação, certificados e
+                        experiências em destaque</span>
+            </button>
+        </div>
+
+        <button class="pularIntro" id="pularIntro" type="button" data-i18n="pularIntro">só quero dar uma olhada</button>
+    </div>
+
     <div class="cabecalho">
         <div class="botoes">
-            <button id="sobreMim">Sobre Mim </button>
-            <button id="habilidades">Habilidades</button>
-            <button id="projetos">Projetos</button>
-            <button id="certificados">Certificados</button>
-            <button id="experiencias">Experiências</button>
-            <button id="contato">Contato</button>
+            <button id="sobreMim" data-i18n="navSobreMim">Sobre Mim </button>
+            <button id="habilidades" data-i18n="navHabilidades">Habilidades</button>
+            <button id="projetos" data-i18n="navProjetos">Projetos</button>
+            <button id="certificados" data-i18n="navCertificados">Certificados</button>
+            <button id="experiencias" data-i18n="navExperiencias">Experiências</button>
+            <button id="contato" data-i18n="navContato">Contato</button>
+        </div>
+    </div>
+
+    <div class="controlesTopo">
+        <button class="perfilBadge" id="perfilBadge" type="button"></button>
+
+        <div class="idiomaSwitch" id="idiomaSwitch" role="group" aria-label="Idioma do site">
+            <button class="idiomaBtn" data-lang="pt" type="button">PT</button>
+            <button class="idiomaBtn" data-lang="en" type="button">EN</button>
         </div>
     </div>
 
@@ -28,86 +176,91 @@
         <span class="icon">✯</span>
     </aside>
 
-    <div class="sobreMimPag" id="sobreMimPag">
-        <div class="infosCompleto">
-            <div class="infos">
-                <h1>Laura Noronha Lara</h1>
-                <p>Engenharia de Software - Puc Minas</p>
-                <p>4º período</p>
-                <p>19 anos</p>
+    <main class="conteudo" id="conteudoPrincipal">
+        <div class="sobreMimPag" id="sobreMimPag">
+            <div class="infosCompleto">
+                <div class="infos">
+                    <h1>Laura Noronha Lara</h1>
+                    <p data-i18n="sobreMimCurso">Engenharia de Software - Puc Minas</p>
+                    <p data-i18n="sobreMimPeriodo">4º período</p>
+                    <p data-i18n="sobreMimIdade">19 anos</p>
+                </div>
+                <div class="avatar">
+                    <img src="images/dvltpft deitado.jpg">
+                </div>
             </div>
-            <div class="avatar">
-                <img src="images/dvltpft deitado.jpg">
-            </div>
+            <footer class="quoteContainer">
+                <blockquote class="quote">“If you can't do it, practice until you can”</blockquote>
+                <cite class="author">- Yuzuru Hanyu</cite>
+            </footer>
         </div>
-        <footer class="quoteContainer">
-            <blockquote class="quote">“If you can't do it, practice until you can”</blockquote>
-            <cite class="author">- Yuzuru Hanyu</cite>
-        </footer>
-    </div>
-    <div class="habilidadesPag" id="habilidadesPag">
-        <h1>Habilidades</h1>
-        <div class="skillsGrid">
-        <div class="skillCard"></div>
-        <div class="skillCard"></div>
-        <div class="skillCard"></div>
-        <div class="skillCard"></div>
-        <div class="skillCard"></div>
-        <div class="skillCard"></div>
-    </div>
-    </div>
-
-     <div class="projetosPag" id="projetosPag">
-        <h1>Projetos</h1>
-        <div class="timeline">
-        <div class="timelineItem timelineItem--top" style="left: 12%;">
-            <div class="timelineCard"></div>
-            <div class="timelineConnector"></div>
-        </div>
-        <div class="timelineItem timelineItem--top" style="left: 42%;">
-            <div class="timelineCard"></div>
-            <div class="timelineConnector"></div>
-        </div>
-        <div class="timelineItem timelineItem--bottom" style="left: 5%;">
-            <div class="timelineConnector"></div>
-            <div class="timelineCard"></div>
-        </div>
-        <div class="timelineItem timelineItem--bottom" style="left: 30%;">
-            <div class="timelineConnector"></div>
-            <div class="timelineCard"></div>
-        </div>
-        <div class="timelineLine"></div>
-        <span class="timelineLoading">loading...</span>
-    </div>
-    </div>
-
-    <div class="certificadosPag" id="certificadosPag">
-        <h1>Certificados</h1>
-        <div class="certList">
-        <div class="certCard">
-            <div class="certIcon">
-                <svg viewBox="0 0 24 24" width="28" height="28" fill="white">
-                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6z"/>
-                    <path d="M14 2v6h6" fill="#2a0d43"/>
-                </svg>
+        <div class="habilidadesPag" id="habilidadesPag">
+            <h1 data-i18n="habilidadesTitulo">Habilidades</h1>
+            <div class="skillsGrid">
+                <div class="skillCard"></div>
+                <div class="skillCard"></div>
+                <div class="skillCard"></div>
+                <div class="skillCard"></div>
+                <div class="skillCard"></div>
+                <div class="skillCard"></div>
             </div>
         </div>
-    </div>
-    </div>
 
-    <div class="experienciasPag" id="experienciasPag">
-        <h1>Experiências</h1>
-        <div class="certList">
-        <div class="certCard">
-            
+        <div class="projetosPag" id="projetosPag">
+            <h1 data-i18n="projetosTitulo">Projetos</h1>
+            <div class="timeline">
+                <div class="timelineItem timelineItem--top" style="left: 12%;">
+                    <div class="timelineCard"></div>
+                    <div class="timelineConnector"></div>
+                </div>
+                <div class="timelineItem timelineItem--top" style="left: 42%;">
+                    <div class="timelineCard"></div>
+                    <div class="timelineConnector"></div>
+                </div>
+                <div class="timelineItem timelineItem--bottom" style="left: 5%;">
+                    <div class="timelineConnector"></div>
+                    <div class="timelineCard"></div>
+                </div>
+                <div class="timelineItem timelineItem--bottom" style="left: 30%;">
+                    <div class="timelineConnector"></div>
+                    <div class="timelineCard"></div>
+                </div>
+                <div class="timelineLine"></div>
+                <span class="timelineLoading">loading...</span>
             </div>
         </div>
-    </div>
 
-    <div class="contatoPag" id="contatoPag">
-        <h1>Contato</h1>
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Necessitatibus quia deleniti reiciendis, in quis iusto consectetur. Autem earum ipsam cum ut obcaecati libero ea. Earum assumenda dicta a est quos.</p>
-    </div>
+        <div class="certificadosPag" id="certificadosPag">
+            <h1 data-i18n="certificadosTitulo">Certificados</h1>
+            <div class="certList">
+                <div class="certCard">
+                    <div class="certIcon">
+                        <svg viewBox="0 0 24 24" width="28" height="28" fill="white">
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6z" />
+                            <path d="M14 2v6h6" fill="#2a0d43" />
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="experienciasPag" id="experienciasPag">
+            <h1 data-i18n="experienciasTitulo">Experiências</h1>
+            <div class="certList">
+                <div class="certCard">
+
+                </div>
+            </div>
+        </div>
+
+        <div class="contatoPag" id="contatoPag">
+            <h1 data-i18n="contatoTitulo">Contato</h1>
+            <p data-i18n="contatoTexto">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Necessitatibus quia
+                deleniti reiciendis, in quis iusto consectetur. Autem earum ipsam cum ut obcaecati libero ea. Earum
+                assumenda dicta a est quos.</p>
+        </div>
+    </main>
 
 </body>
+
 </html>

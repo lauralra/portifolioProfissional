@@ -33,12 +33,277 @@ body {
   background-color: #ffffff;
   border-radius: 50%;
   animation: piscar infinite ease-in-out alternate;
+  transform: translate(var(--tx, 0px), var(--ty, 0px)) scale(var(--s, 1));
+  transition: transform 0.15s ease-out, box-shadow 0.2s ease-out;
+  will-change: transform;
+}
+
+.star--aceso {
+  background-color: #efe4fa;
+  box-shadow:
+    0 0 4px 1px rgba(224, 195, 255, 0.55),
+    0 0 9px 3px rgba(178, 120, 255, 0.32);
 }
 
 @keyframes piscar {
-  0% { opacity: 0.1; transform: scale(0.8); }
-  100% { opacity: 1; transform: scale(1.2); }
+  0% { opacity: 0.1; }
+  100% { opacity: 1; }
 }
+
+/* Tela inicial: escolha de perfil por constelação */
+.introOverlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  background: radial-gradient(circle at 50% 35%, rgba(32, 11, 59, 0.55) 0%, rgba(8, 3, 16, 0.8) 100%);
+  backdrop-filter: brightness(0.55) saturate(0.9);
+  -webkit-backdrop-filter: brightness(0.55) saturate(0.9);
+  padding: 20px;
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.4s ease, visibility 0.4s ease;
+}
+
+.introOverlay.escondido {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.introTexto {
+  text-align: center;
+}
+
+.introTexto h1 {
+  font-size: 1.9rem;
+  font-weight: 400;
+  margin-bottom: 10px;
+}
+
+.introSubtitulo {
+  font-size: 1rem;
+  margin-bottom: 0;
+}
+
+.constelacoes {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 20px 60px;
+  width: 100%;
+  max-width: 1000px;
+}
+
+.constelacaoBtn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 220px;
+  padding: 10px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+.constelacaoSvg {
+  width: 100%;
+  height: 180px;
+  overflow: visible;
+}
+
+.linhaC {
+  stroke: rgba(255, 255, 255, 0.3);
+  stroke-width: 1;
+  transition: stroke 0.25s ease, filter 0.25s ease;
+}
+
+.estrelaC {
+  fill: #ffffff;
+  opacity: 0.85;
+  filter: drop-shadow(0 0 2px rgba(200, 170, 255, 0.6));
+  transition: fill 0.25s ease, filter 0.25s ease, r 0.25s ease;
+  animation: piscarConstelacao 2.6s ease-in-out infinite alternate;
+}
+
+.estrelaC:nth-child(odd) {
+  animation-delay: -1.3s;
+}
+
+@keyframes piscarConstelacao {
+  0% { opacity: 0.65; }
+  100% { opacity: 1; }
+}
+
+.constelacaoBtn:hover .linhaC,
+.constelacaoBtn:focus-visible .linhaC {
+  stroke: rgba(224, 195, 255, 0.9);
+  filter: drop-shadow(0 0 3px rgba(178, 120, 255, 0.7));
+}
+
+.constelacaoBtn:hover .estrelaC,
+.constelacaoBtn:focus-visible .estrelaC {
+  fill: #f5ecff;
+  filter: drop-shadow(0 0 8px rgba(220, 190, 255, 1)) drop-shadow(0 0 16px rgba(178, 120, 255, 0.8));
+}
+
+.constelacaoLabel {
+  display: block;
+  margin-top: 14px;
+  font-size: 1.1rem;
+  letter-spacing: 0.5px;
+  transition: color 0.25s ease, text-shadow 0.25s ease;
+}
+
+.constelacaoBtn:hover .constelacaoLabel,
+.constelacaoBtn:focus-visible .constelacaoLabel {
+  color: #f5ecff;
+  text-shadow: 0 0 12px rgba(178, 120, 255, 0.8);
+}
+
+.constelacaoLegenda {
+  display: block;
+  margin-top: 6px;
+  font-size: 0.8rem;
+  color: #b5adc0;
+  max-width: 190px;
+  opacity: 0;
+  transform: translateY(-4px);
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.constelacaoBtn:hover .constelacaoLegenda,
+.constelacaoBtn:focus-visible .constelacaoLegenda {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.pularIntro {
+  font-size: 0.85rem;
+  color: #b5adc0;
+  text-decoration: underline;
+}
+
+.pularIntro:hover {
+  color: white;
+  text-decoration: underline;
+}
+
+@media (max-width: 720px) {
+  .constelacoes {
+    gap: 30px;
+  }
+
+  .constelacaoBtn {
+    width: 160px;
+  }
+
+  .constelacaoSvg {
+    height: 140px;
+  }
+}
+
+.controlesTopo {
+  position: fixed;
+  top: 72px;
+  left: 20px;
+  z-index: 1100;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.perfilBadge {
+  background: rgba(17, 12, 25, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #d1c9db;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  white-space: nowrap;
+  display: none;
+}
+
+.perfilBadge.visivel {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.perfilBadge:hover {
+  border-color: #8d1df0;
+  color: white;
+  text-decoration: none;
+}
+
+/* Switch de idioma (PT/EN) */
+.idiomaSwitch {
+  display: flex;
+  background: rgba(17, 12, 25, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 20px;
+  padding: 2px;
+  gap: 2px;
+}
+
+.idiomaBtn {
+  padding: 4px 10px;
+  border-radius: 16px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  color: #b5adc0;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.idiomaBtn:hover {
+  text-decoration: none;
+  color: white;
+}
+
+.idiomaBtn.ativo {
+  background: #8d1df0;
+  color: white;
+}
+
+/* Reordenação do conteúdo conforme o perfil escolhido */
+.conteudo {
+  display: flex;
+  flex-direction: column;
+}
+
+.conteudo #sobreMimPag { order: 1; }
+.conteudo #habilidadesPag { order: 2; }
+.conteudo #projetosPag { order: 3; }
+.conteudo #certificadosPag { order: 4; }
+.conteudo #experienciasPag { order: 5; }
+.conteudo #contatoPag { order: 6; }
+
+body[data-perfil="recrutador"] .conteudo #sobreMimPag { order: 1; }
+body[data-perfil="recrutador"] .conteudo #habilidadesPag { order: 2; }
+body[data-perfil="recrutador"] .conteudo #experienciasPag { order: 3; }
+body[data-perfil="recrutador"] .conteudo #projetosPag { order: 4; }
+body[data-perfil="recrutador"] .conteudo #certificadosPag { order: 5; }
+body[data-perfil="recrutador"] .conteudo #contatoPag { order: 6; }
+
+body[data-perfil="desenvolvedor"] .conteudo #sobreMimPag { order: 1; }
+body[data-perfil="desenvolvedor"] .conteudo #projetosPag { order: 2; }
+body[data-perfil="desenvolvedor"] .conteudo #habilidadesPag { order: 3; }
+body[data-perfil="desenvolvedor"] .conteudo #certificadosPag { order: 4; }
+body[data-perfil="desenvolvedor"] .conteudo #experienciasPag { order: 5; }
+body[data-perfil="desenvolvedor"] .conteudo #contatoPag { order: 6; }
+
+body[data-perfil="academico"] .conteudo #sobreMimPag { order: 1; }
+body[data-perfil="academico"] .conteudo #certificadosPag { order: 2; }
+body[data-perfil="academico"] .conteudo #experienciasPag { order: 3; }
+body[data-perfil="academico"] .conteudo #projetosPag { order: 4; }
+body[data-perfil="academico"] .conteudo #habilidadesPag { order: 5; }
+body[data-perfil="academico"] .conteudo #contatoPag { order: 6; }
 
 /* Cabeçalho */
 .cabecalho{
@@ -63,6 +328,35 @@ body {
   padding: 0 100px;
   width: 100%;
 }
+
+/* Ordem dos botões do cabeçalho: acompanha a mesma sequência das seções na página */
+#sobreMim { order: 1; }
+#habilidades { order: 2; }
+#projetos { order: 3; }
+#certificados { order: 4; }
+#experiencias { order: 5; }
+#contato { order: 6; }
+
+body[data-perfil="recrutador"] #sobreMim { order: 1; }
+body[data-perfil="recrutador"] #habilidades { order: 2; }
+body[data-perfil="recrutador"] #experiencias { order: 3; }
+body[data-perfil="recrutador"] #projetos { order: 4; }
+body[data-perfil="recrutador"] #certificados { order: 5; }
+body[data-perfil="recrutador"] #contato { order: 6; }
+
+body[data-perfil="desenvolvedor"] #sobreMim { order: 1; }
+body[data-perfil="desenvolvedor"] #projetos { order: 2; }
+body[data-perfil="desenvolvedor"] #habilidades { order: 3; }
+body[data-perfil="desenvolvedor"] #certificados { order: 4; }
+body[data-perfil="desenvolvedor"] #experiencias { order: 5; }
+body[data-perfil="desenvolvedor"] #contato { order: 6; }
+
+body[data-perfil="academico"] #sobreMim { order: 1; }
+body[data-perfil="academico"] #certificados { order: 2; }
+body[data-perfil="academico"] #experiencias { order: 3; }
+body[data-perfil="academico"] #projetos { order: 4; }
+body[data-perfil="academico"] #habilidades { order: 5; }
+body[data-perfil="academico"] #contato { order: 6; }
 
 button {
   background: transparent;
@@ -105,6 +399,15 @@ button:hover {
   font-size: 1.3rem;
   color: #ffffff;
   transition: top 0.05s linear;
+  pointer-events: auto;
+  cursor: grab;
+  user-select: none;
+  touch-action: none;
+}
+
+.sideBar .icon.arrastando {
+  cursor: grabbing;
+  transition: none;
 }
 
 /* Formatação das Seções */

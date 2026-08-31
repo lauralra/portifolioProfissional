@@ -1,0 +1,9 @@
+- O usuáro deve escolher perfil
+
+- O usuário deve escolher idioma
+
+- O usuário deve navegar pelas sessões através do cabeçalho/navbar
+
+- O usuário deve rolar o site pela barra lateral
+
+- O usuário deve acessar links de contato
