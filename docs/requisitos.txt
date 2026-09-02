@@ -1,9 +1,11 @@
-- O usuáro deve escolher perfil
+- RF01 O usuáro deve escolher perfil
 
-- O usuário deve escolher idioma
+- RF02 O usuário deve escolher idioma
 
-- O usuário deve navegar pelas sessões através do cabeçalho/navbar
+- RF03 Usuário deve ver o portifólio
 
-- O usuário deve rolar o site pela barra lateral
+- RF04 O usuário deve navegar pelas sessões através do cabeçalho/navbar
 
-- O usuário deve acessar links de contato
+- RF05 O usuário deve rolar o site pela barra lateral
+
+- RF06 O usuário deve acessar links de contato

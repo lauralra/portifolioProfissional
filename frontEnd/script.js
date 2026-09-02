@@ -227,6 +227,10 @@ const QUOTES_POR_PERFIL = {
   academico: {
     texto: `"What's there to lose? Every second there's something you're winning"`,
     autor: '— Alysa Liu'
+  },
+  desenvolvedor: {
+    texto: `"If you are afraid of losing, you can never win"`,
+    autor: '— Kaori Sakamoto'
   }
 };
 
