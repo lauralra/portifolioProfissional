@@ -9,3 +9,7 @@
 - RF05 O usuário deve rolar o site pela barra lateral
 
 - RF06 O usuário deve acessar links de contato
+
+- RF07 O sistema deve conter uma barra de scroll lateral
+
+- Rf08 O sistema deve mudar a ordem das informações de acordo com o perfil  

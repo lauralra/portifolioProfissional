@@ -545,10 +545,19 @@ p {
     display:flex;
     align-items:center;
     justify-content:center;
+    overflow: hidden;
     font-family: 'Fraunces', serif;
     font-size: 2.6rem;
     color: var(--ink);
     box-shadow: 0 0 40px rgba(138,92,246,0.25);
+  }
+
+  .frameFoto{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 20%;
+    border-radius: 50%;
   }
 
   .quote{
@@ -722,6 +731,15 @@ p {
     min-height: 320px;
 }
 
+.timelineLoading {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-150%);
+    font-size: 0.9rem;
+    color: #d1c9db;
+}
+
 .timelineLine {
     position: absolute;
     top: 50%;
@@ -730,15 +748,6 @@ p {
     height: 2px;
     background-color: white;
     transform: translateY(-50%);
-}
-
-.timelineLoading {
-    position: absolute;
-    top: 50%;
-    right: 0;
-    transform: translateY(-150%);
-    font-size: 0.9rem;
-    color: #d1c9db;
 }
 
 .timelineItem {
@@ -757,10 +766,145 @@ p {
 }
 
 .timelineCard {
-    width: 70px;
-    height: 70px;
-    background-color: #e6bbee;
-    border-radius: 4px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 160px;
+    padding: 14px 18px;
+    background: linear-gradient(160deg, rgba(74, 49, 112, 0.45), rgba(28, 16, 48, 0.45));
+    border: 1px solid rgba(230, 187, 238, 0.35);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: border-color 0.25s ease, transform 0.25s ease;
+}
+
+.timelineCard:hover,
+.timelineCard:focus-within {
+    border-color: #e6bbee;
+    transform: translateY(-2px);
+    z-index: 5;
+}
+
+.timelineCardNome {
+    color: var(--ink);
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-align: center;
+    letter-spacing: 0.3px;
+}
+
+.timelineCardPopup {
+    position: absolute;
+    left: calc(100% + 20px);
+    transform: translateX(-8px);
+    width: min(360px, 32vw);
+    max-width: calc(100vw - 420px);
+    max-height: calc(100vh - 20px);
+    overflow-y: auto;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 16px;
+    background: linear-gradient(160deg, #2a1a45, #150a26);
+    border: 1px solid rgba(230, 187, 238, 0.4);
+    border-radius: 10px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s;
+    z-index: 10;
+}
+
+.timelineItem--top .timelineCardPopup {
+    top: 10px;
+}
+
+.timelineItem--bottom .timelineCardPopup {
+    bottom: 10px;
+}
+
+.timelineCard:hover .timelineCardPopup,
+.timelineCard:focus-within .timelineCardPopup {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateX(0);
+}
+
+.timelineCardTags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.timelineCardTag {
+    background: rgba(230, 187, 238, 0.08);
+    border: 1px solid rgba(230, 187, 238, 0.3);
+    color: var(--ink);
+    border-radius: 999px;
+    padding: 3px 10px;
+    font-size: 0.72rem;
+    letter-spacing: 0.2px;
+}
+
+.timelineCardData {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    color: var(--ink-faint);
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+}
+
+.timelineItem--top .timelineCardData {
+    top: 100%;
+    margin-top: 14px;
+}
+
+.timelineItem--bottom .timelineCardData {
+    bottom: 100%;
+    margin-bottom: 14px;
+}
+
+.timelineCardGif {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border-radius: 6px;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.timelineCardGif img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.timelineCardDescricao {
+    color: var(--ink-faint);
+    font-size: 0.85rem;
+    line-height: 1.4;
+}
+
+.timelineCardLink {
+    align-self: flex-start;
+    color: var(--gold);
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.2s ease;
+}
+
+.timelineCardLink:hover {
+    border-color: var(--gold);
 }
 
 .timelineConnector {

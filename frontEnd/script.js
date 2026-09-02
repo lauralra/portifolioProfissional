@@ -125,6 +125,10 @@ const TRADUCOES = {
 
     habilidadesTitulo: 'Habilidades',
     projetosTitulo: 'Projetos',
+    projetoAzurreDescricao: 'Sistema de planejamento e simulação de rotas marítmas para entregas',
+    projetoClinPlayDescricao: 'Aplicação de apoio à clínicas de fisioterapia e suporte remoto aos pacientes',
+    projetoLink: 'Acessar projeto',
+    projetosCarregando: 'carregando...',
     certificadosTitulo: 'Certificados',
     experienciasTitulo: 'Experiências',
     contatoTitulo: 'Contato',
@@ -164,6 +168,10 @@ const TRADUCOES = {
 
     habilidadesTitulo: 'Skills',
     projetosTitulo: 'Projects',
+    projetoAzurreDescricao: '[Description to be added]',
+    projetoClinPlayDescricao: '[Description to be added]',
+    projetoLink: 'View project',
+    projetosCarregando: 'loading...',
     certificadosTitulo: 'Certificates',
     experienciasTitulo: 'Experience',
     contatoTitulo: 'Contact',
@@ -277,6 +285,11 @@ function aplicarPerfil(perfil) {
   atualizarQuote();
 }
 
+function rolarParaPrimeiraPagina() {
+  const primeiraSecao = document.getElementById('sobreMimPag');
+  if (primeiraSecao) primeiraSecao.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
 function esconderIntro() {
   const overlay = document.getElementById('introOverlay');
   if (overlay) overlay.classList.add('escondido');
@@ -300,6 +313,7 @@ function configurarSelecaoPerfil() {
       localStorage.setItem(CHAVE_PERFIL, perfil);
       aplicarPerfil(perfil);
       esconderIntro();
+      rolarParaPrimeiraPagina();
     });
   });
 
@@ -310,6 +324,7 @@ function configurarSelecaoPerfil() {
       localStorage.setItem(CHAVE_PERFIL, 'nenhum');
       aplicarPerfil(null);
       esconderIntro();
+      rolarParaPrimeiraPagina();
     });
   }
 

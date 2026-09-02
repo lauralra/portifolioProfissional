@@ -1,4 +1,5 @@
 # Descrição do projeto
+
 Desenvolvimento portifólio profissional
 
 # Tecnologias previstas
@@ -8,12 +9,12 @@ Desenvolvimento portifólio profissional
 - JavaScript
 
 # Protótipos de tela
-![alt text](image.png)
+![alt text](frontEnd/images/image.png)
 
-![alt text](image-1.png)
+![alt text](frontEnd/images/image-1.png)
 
-![alt text](image-3.png)
+![alt text](frontEnd/images/image-3.png)
 
-![alt text](image-4.png)
+![alt text](frontEnd/images/image-4.png)
 
-![alt text](image-5.png)
+![alt text](frontEnd/images/image-5.png)
