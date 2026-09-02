@@ -128,7 +128,7 @@ const TRADUCOES = {
     certificadosTitulo: 'Certificados',
     experienciasTitulo: 'Experiências',
     contatoTitulo: 'Contato',
-    contatoTexto: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Necessitatibus quia deleniti reiciendis, in quis iusto consectetur. Autem earum ipsam cum ut obcaecati libero ea. Earum assumenda dicta a est quos.'
+    contatoTexto: 'Quer trocar uma ideia, propor um projeto ou apenas dizer oi? Me chama por um dos canais abaixo.'
   },
   en: {
     navSobreMim: 'About Me',
@@ -167,7 +167,7 @@ const TRADUCOES = {
     certificadosTitulo: 'Certificates',
     experienciasTitulo: 'Experience',
     contatoTitulo: 'Contact',
-    contatoTexto: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Necessitatibus quia deleniti reiciendis, in quis iusto consectetur. Autem earum ipsam cum ut obcaecati libero ea. Earum assumenda dicta a est quos.'
+    contatoTexto: "Want to talk, propose a project, or just say hi? Reach me through the channel below."
   }
 };
 const CHAVE_IDIOMA = 'idiomaVisitante';
@@ -219,6 +219,28 @@ const CHAVE_PERFIL = 'perfilVisitante';
 let perfilAtual = null;
 let decisaoTomada = false;
 
+const QUOTE_PADRAO = {
+  texto: `"If you can't do it, practice until you can"`,
+  autor: '— Yuzuru Hanyu'
+};
+const QUOTES_POR_PERFIL = {
+  academico: {
+    texto: `"What's there to lose? Every second there's something you're winning"`,
+    autor: '— Alysa Liu'
+  }
+};
+
+function atualizarQuote() {
+  const quoteTexto = document.getElementById('quoteTexto');
+  const quoteAutor = document.getElementById('quoteAutor');
+  if (!quoteTexto || !quoteAutor) return;
+
+  const quote = (perfilAtual && QUOTES_POR_PERFIL[perfilAtual]) || QUOTE_PADRAO;
+  quoteTexto.textContent = quote.texto;
+  quoteAutor.textContent = quote.autor;
+  quoteAutor.style.display = quote.autor ? '' : 'none';
+}
+
 function atualizarBadgePerfil() {
   const badge = document.getElementById('perfilBadge');
   if (!badge) return;
@@ -248,6 +270,7 @@ function aplicarPerfil(perfil) {
   }
 
   atualizarBadgePerfil();
+  atualizarQuote();
 }
 
 function esconderIntro() {
@@ -290,13 +313,14 @@ function configurarSelecaoPerfil() {
     badge.addEventListener('click', mostrarIntro);
   }
 
+  // O site sempre abre na tela de escolha de perfil; o perfil salvo só é
+  // reaplicado ao conteúdo (para o caso de o visitante pular a escolha de novo),
+  // sem pular a tela automaticamente.
   const perfilSalvo = localStorage.getItem(CHAVE_PERFIL);
   if (perfilSalvo === 'nenhum') {
     aplicarPerfil(null);
-    esconderIntro();
   } else if (perfilSalvo && NOME_CHAVE_PERFIL[perfilSalvo]) {
     aplicarPerfil(perfilSalvo);
-    esconderIntro();
   }
 }
 
@@ -325,7 +349,6 @@ function configurarScrollSuave() {
       });
     }
   });
-  console.log('scroll configurado')
 }
 
 // 3. Move o ícone (✯) ao longo da linha conforme a rolagem da página

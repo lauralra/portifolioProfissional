@@ -5,6 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>portifolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;1,500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
 </head>
@@ -63,7 +66,6 @@
             <button class="constelacaoBtn" data-perfil="desenvolvedor" type="button"
                 data-i18n-aria="perfilDesenvolvedorAria" aria-label="Ver portfólio como Desenvolvedor(a)">
                 <svg class="constelacaoSvg" viewBox="0 0 220 200">
-                    <line class="linhaC" x1="70" y1="18" x2="115" y2="25" />
                     <line class="linhaC" x1="85" y1="45" x2="105" y2="60" />
                     <line class="linhaC" x1="105" y1="60" x2="120" y2="65" />
                     <line class="linhaC" x1="105" y1="60" x2="95" y2="90" />
@@ -142,9 +144,10 @@
                     <circle class="estrelaC" cx="195" cy="180" r="3.4" />
                     <circle class="estrelaC" cx="185" cy="185" r="3.4" />
                     <circle class="estrelaC" cx="185" cy="175" r="3.4" />
-                    <span class="constelacaoLabel" data-i18n="perfilAcademicoNome">Acadêmico(a)</span>
-                    <span class="constelacaoLegenda" data-i18n="perfilAcademicoLegenda">Formação, certificados e
-                        experiências em destaque</span>
+                </svg>
+                <span class="constelacaoLabel" data-i18n="perfilAcademicoNome">Acadêmico(a)</span>
+                <span class="constelacaoLegenda" data-i18n="perfilAcademicoLegenda">Formação, certificados e
+                    experiências em destaque</span>
             </button>
         </div>
 
@@ -209,21 +212,43 @@
                     </div>
 
                     <div class="quote">
-                        <p>"If you can't do it, practice until you can"</p>
-                        <span>— Yuzuru Hanyu</span>
+                        <p id="quoteTexto">"If you can't do it, practice until you can"</p>
+                        <span id="quoteAutor">— Yuzuru Hanyu</span>
                     </div>
                 </div>
             </div>
         </div>
         <div class="habilidadesPag" id="habilidadesPag">
             <h1 data-i18n="habilidadesTitulo">Habilidades</h1>
-            <div class="skillsGrid">
-                <div class="skillCard"></div>
-                <div class="skillCard"></div>
-                <div class="skillCard"></div>
-                <div class="skillCard"></div>
-                <div class="skillCard"></div>
-                <div class="skillCard"></div>
+            <div class="skillsGroups">
+                <div class="skillGroup">
+                    <h2 class="skillGroupTitulo">Processos &amp; Modelagem</h2>
+                    <div class="skillsGrid">
+                        <span class="skillCard">UML</span>
+                        <span class="skillCard">BPMN</span>
+                        <span class="skillCard">Levantamento de requisitos</span>
+                    </div>
+                </div>
+                <div class="skillGroup">
+                    <h2 class="skillGroupTitulo">Linguagens &amp; Frameworks</h2>
+                    <div class="skillsGrid">
+                        <span class="skillCard">Java</span>
+                        <span class="skillCard">SpringBoot</span>
+                        <span class="skillCard">Python</span>
+                        <span class="skillCard">C</span>
+                        <span class="skillCard">HTML</span>
+                        <span class="skillCard">CSS</span>
+                        <span class="skillCard">JavaScript</span>
+                    </div>
+                </div>
+                <div class="skillGroup">
+                    <h2 class="skillGroupTitulo">Dados &amp; Ferramentas</h2>
+                    <div class="skillsGrid">
+                        <span class="skillCard">SQL</span>
+                        <span class="skillCard">Git/GitHub</span>
+                        <span class="skillCard">Figma</span>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -261,24 +286,41 @@
                             <path d="M14 2v6h6" fill="#2a0d43" />
                         </svg>
                     </div>
+                    <div class="certInfo">
+                        <span class="certTitulo">Cambridge B2 First</span>
+                        <span class="certSubtitulo">Certificado de inglês avançado</span>
+                    </div>
                 </div>
             </div>
         </div>
 
         <div class="experienciasPag" id="experienciasPag">
             <h1 data-i18n="experienciasTitulo">Experiências</h1>
-            <div class="certList">
-                <div class="certCard">
-
+            <div class="expList">
+                <div class="expCard">
+                    <span class="expAno">2024</span>
+                    <div class="expInfo">
+                        <h3 class="expTitulo">Menção Honrosa — Simulação Magnum das Nações Unidas (Modelo ONU)</h3>
+                        <p class="expDescricao">Delegada em comitê conduzido integralmente em inglês, com debate
+                            sobre "The Anglophone Crisis in Cameroon".</p>
+                    </div>
                 </div>
             </div>
         </div>
 
         <div class="contatoPag" id="contatoPag">
             <h1 data-i18n="contatoTitulo">Contato</h1>
-            <p data-i18n="contatoTexto">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Necessitatibus quia
-                deleniti reiciendis, in quis iusto consectetur. Autem earum ipsam cum ut obcaecati libero ea. Earum
-                assumenda dicta a est quos.</p>
+            <p data-i18n="contatoTexto"></p>
+            <div class="contatoLinks">
+                <a class="contatoBtn" href="https://www.linkedin.com/in/laura-noronha-lara" target="_blank"
+                    rel="noopener noreferrer">
+                    <svg class="contatoIcon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                        <path
+                            d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56z" />
+                    </svg>
+                    <span>LinkedIn</span>
+                </a>
+            </div>
         </div>
     </main>
 
