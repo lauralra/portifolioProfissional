@@ -8,6 +8,9 @@ Desenvolvimento portifólio profissional
 - CSS
 - JavaScript
 
+# Site hospedado
+https://portifolio-laura-lara.vercel.app/
+
 # Protótipos de tela
 ![alt text](frontEnd/images/image.png)
 
